@@ -1,0 +1,6 @@
+{
+  "name": "Bodi General Store - بوڑی جنرل سٹور POS & Khata",
+  "description": "پوائنٹ آف سیل (POS) و ادھار کھاتہ سافٹ ویئر برائے بوڑی جنرل سٹور بمعہ 58mm/80mm بلوٹوتھ تھرمل پرنٹر سپورٹ۔",
+  "requestFramePermissions": ["bluetooth"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

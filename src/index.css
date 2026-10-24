@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-urdu {
+  font-family: 'Noto Sans Arabic', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.font-mono-receipt {
+  font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Custom sleek scrollbars for inventory & receipts */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}
+
+/* Dedicated Thermal Print rules for 58mm and 80mm continuous paper roll */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  #thermal-receipt-print-area,
+  #thermal-receipt-print-area * {
+    visibility: visible;
+  }
+  #thermal-receipt-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 80mm !important;
+    margin: 0 auto !important;
+    padding: 4mm 2mm !important;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    box-shadow: none !important;
+    font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+    line-height: 1.25 !important;
+  }
+  @page {
+    margin: 0;
+    size: auto;
+  }
+}

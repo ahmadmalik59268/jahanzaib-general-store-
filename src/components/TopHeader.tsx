@@ -51,7 +51,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
   const dateFormatted = `${dayName}, ${dayNum} ${monthName} ${year}`;
 
   return (
-    <header className="sticky top-0 z-30 bg-white border-b border-slate-200/90 px-3 sm:px-5 py-2.5 shadow-2xs">
+    <header dir="ltr" className="sticky top-0 z-30 bg-white border-b border-slate-200/90 px-3 sm:px-5 py-2.5 shadow-2xs">
       <div className="flex items-center justify-between gap-2 sm:gap-4 max-w-7xl mx-auto">
         {/* Left: Hamburger (mobile) & Store Title */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">

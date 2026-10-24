@@ -380,15 +380,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
   if (isMobile) {
     if (!isOpenMobile) return null;
     return (
-      <div className="fixed inset-0 z-50 md:hidden">
+      <div dir="ltr" className="fixed inset-0 z-50 md:hidden">
         {/* Backdrop */}
         <div
           onClick={onCloseMobile}
           className="fixed inset-0 bg-slate-950/70 backdrop-blur-xs transition-opacity"
         />
-        {/* Slide-out drawer using logical start-0 so it docks properly in LTR & RTL */}
+        {/* Slide-out drawer strictly docked to the left */}
         <aside
-          className="fixed inset-y-0 start-0 z-50 w-72 max-w-[85vw] bg-[#0c1322] text-slate-300 flex flex-col justify-between shadow-2xl border-e border-slate-800/80"
+          dir="ltr"
+          className="fixed inset-y-0 left-0 z-50 w-72 max-w-[85vw] bg-[#0c1322] text-slate-300 flex flex-col justify-between shadow-2xl border-r border-slate-800/80"
         >
           {renderContent(true)}
         </aside>
@@ -398,7 +399,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   // Desktop Static/Sticky Sidebar inside flex container
   return (
-    <aside className="w-full h-full bg-[#0c1322] text-slate-300 flex flex-col justify-between border-e border-slate-800/80">
+    <aside dir="ltr" className="w-full h-full bg-[#0c1322] text-slate-300 flex flex-col justify-between border-r border-slate-800/80">
       {renderContent(false)}
     </aside>
   );

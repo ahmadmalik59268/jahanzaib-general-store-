@@ -30,7 +30,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   const isDashboard = currentView === 'dashboard';
 
   return (
-    <nav className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-[#0c1322]/95 backdrop-blur-md border-t border-slate-800/80 px-2 py-1.5 shadow-2xl safe-area-bottom">
+    <nav dir="ltr" className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-[#0c1322]/95 backdrop-blur-md border-t border-slate-800/80 px-2 py-1.5 shadow-2xl safe-area-bottom">
       <div className="grid grid-cols-5 gap-1 items-center max-w-md mx-auto">
         {/* 1. Dashboard */}
         <button

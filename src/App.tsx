@@ -58,10 +58,10 @@ export default function App() {
   const [activeSaleForPrint, setActiveSaleForPrint] = useState<Sale | undefined>(undefined);
   const [activeVasooliForPrint, setActiveVasooliForPrint] = useState<KhataLedgerEntry | undefined>(undefined);
 
-  // Sync HTML lang and dir attribute for pristine typography
+  // Lock layout direction strictly to LTR so Sidebar permanently stays on the Left
   useEffect(() => {
-    document.documentElement.lang = language;
-    document.documentElement.dir = language === 'ur' ? 'rtl' : 'ltr';
+    document.documentElement.dir = 'ltr';
+    document.body.dir = 'ltr';
   }, [language]);
 
   // Toggle Language
@@ -324,6 +324,7 @@ export default function App() {
 
   return (
     <div
+      dir="ltr"
       className={`min-h-screen bg-slate-100 text-slate-900 flex flex-col md:flex-row ${
         language === 'ur' ? 'font-urdu' : ''
       }`}
